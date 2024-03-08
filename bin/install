@@ -25,6 +25,7 @@ get_arch() {
 
   echo "${arch}"
 }
+proto_cli-x86_64-apple-darwin.tar.xz
 
 get_platform() {
   local platform; platform=$(uname -s | tr '[:upper:]' '[:lower:]')
@@ -39,7 +40,7 @@ get_filename() {
   echo "${binary_name}_v${version}_${platform}.tar.gz"
 }
 
-# https://github.com/robscott/kube-capacity/releases/download/v0.8.0/kube-capacity_v0.8.0_darwin_x86_64.tar.gz
+# https://github.com/moonrepo/proto/releases/download/v0.31.4/proto_cli-x86_64-apple-darwin.tar.xz
 
 get_download_url() {
   local version="$1"
@@ -48,7 +49,7 @@ get_download_url() {
   local filename
   filename="$(get_filename "$version" "$platform" "$binary_name")"
 
-  echo "https://github.com/robscott/kube-capacity/releases/download/v${version}/${filename}"
+  echo "https://github.com/moonrepo/proto/releases/download/v${version}/${filename}"
 }
 
 install_tool() {
@@ -87,4 +88,4 @@ install_tool() {
 
 tmp_download_dir="$(mktemp -d -t 'asdf_XXXXXXXX')"
 trap 'rm -rf "${tmp_download_dir}"' EXIT
-install_tool "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH" "$tmp_download_dir" kube-capacity
+install_tool "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH" "$tmp_download_dir" proto_cli
