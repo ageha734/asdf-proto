@@ -1,4 +1,4 @@
-# asdf-kube-capacity
+# asdf-proto
 
 [![Build Status](https://travis-ci.org/looztra/asdf-kube-capacity.svg?branch=master)](https://travis-ci.org/looztra/asdf-kube-capacity)
 
