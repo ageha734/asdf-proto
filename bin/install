@@ -19,17 +19,16 @@ get_arch() {
     arch='x86_64'
     ;;
   arm64)
-    arch='arm64'
+    arch='aarcj64'
     ;;
   esac
 
   echo "${arch}"
 }
-proto_cli-x86_64-apple-darwin.tar.xz
 
 get_platform() {
   local platform; platform=$(uname -s | tr '[:upper:]' '[:lower:]')
-  echo "${platform}_$(get_arch)"
+  echo "${platform}-apple-$(get_arch)"
 }
 
 get_filename() {
@@ -37,7 +36,7 @@ get_filename() {
   local platform="$2"
   local binary_name="$3"
   
-  echo "${binary_name}_v${version}_${platform}.tar.gz"
+  echo "${binary_name}_cli-v${version}-${platform}.tar.xz"
 }
 
 # https://github.com/moonrepo/proto/releases/download/v0.31.4/proto_cli-x86_64-apple-darwin.tar.xz
