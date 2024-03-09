@@ -32,4 +32,4 @@ jobs:
       - name: Test plugin
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: node --version
+          command: proto --version
